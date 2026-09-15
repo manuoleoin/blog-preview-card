@@ -1,9 +1,15 @@
-function App() {
-  return (
-    <>
-      <h1 className="font-figtree text-3xl font-extrabold text-yellow-500">Hello, World!</h1>
-    </>
-  )
-}
+import { BrowserRouter, Routes, Route } from "react-router";
+import CenteredLayout from "./layouts/CenteredLayout";
+import HomePage from "./pages/HomePage";
 
-export default App
+export default function App() {
+  return (
+    <BrowserRouter>
+        <Routes>
+          <Route element={<CenteredLayout />}>
+            <Route index element={<HomePage />} />
+          </Route>
+        </Routes>
+    </BrowserRouter>
+  );
+}
